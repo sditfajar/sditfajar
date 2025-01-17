@@ -1,0 +1,15 @@
+1. Instal
+npm init -y
+npm i -D tailwindcss
+npx tailwindcss init
+
+2. edit file  tailwind.config.js
+content: ['./index.html'],
+
+3. buat folder baru ( src > file baru input.css )
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+4. npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+5. <link rel="stylesheet" href="dist/output.css">
