@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maze Game</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-slate-900">
+  <h1 class="mb-4 text-2xl font-bold text-white">Maze Game</h1>
+
+  <!-- Maze Container -->
+  <div id="maze" class="relative w-[450px] h-[270px] border-2 border-white">
+    <!-- Grid Lines -->
+    <!-- Horizontal Lines -->
+    <div class="absolute top-0 left-0 w-full h-[2px] bg-white"></div>
+    <div class="absolute top-[30px] left-0 w-full h-[2px] bg-white"></div>
+    <div class="absolute top-[60px] left-0 w-full h-[2px] bg-white"></div>
+    <div class="absolute top-[90px] left-0 w-full h-[2px] bg-white"></div>
+    <div class="absolute top-[120px] left-0 w-full h-[2px] bg-white"></div>
+    <div class="absolute top-[150px] left-0 w-full h-[2px] bg-white"></div>
+    <div class="absolute top-[180px] left-0 w-full h-[2px] bg-white"></div>
+    <div class="absolute top-[210px] left-0 w-full h-[2px] bg-white"></div>
+    <div class="absolute top-[240px] left-0 w-full h-[2px] bg-white"></div>
+    <div class="absolute top-[270px] left-0 w-full h-[2px] bg-white"></div>
+
+    <!-- Vertical Lines -->
+    <div class="absolute top-0 left-0 w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[30px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[60px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[90px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[120px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[150px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[180px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[210px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[240px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[270px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[300px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[330px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[360px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[390px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[420px] w-[2px] h-full bg-white"></div>
+    <div class="absolute top-0 left-[450px] w-[2px] h-full bg-white"></div>
+
+    <!-- Player -->
+    <div id="player" class="absolute text-xl" style="top: 30px; left: 60px">😊</div>
+    <!-- Goal -->
+    <div id="goal" class="absolute text-xl" style="top: 240px; left: 420px">🏠</div>
+  </div>
+
+  <!-- Controls -->
+  <div class="grid grid-cols-3 gap-2 mt-6">
+    <div></div>
+    <button onclick="move('up')" class="btn">⬆️</button>
+    <div></div>
+    <button onclick="move('left')" class="btn">⬅️</button>
+    <div></div>
+    <button onclick="move('right')" class="btn">➡️</button>
+    <div></div>
+    <button onclick="move('down')" class="btn">⬇️</button>
+    <div></div>
+  </div>
+
+  <script>
+    const player = document.getElementById('player');
+    const goal = document.getElementById('goal');
+    let x = 60;
+    let y = 30;
+
+    function move(direction) {
+      if (direction === 'up' && y >= 30) y -= 30;
+      if (direction === 'down' && y <= 210) y += 30;
+      if (direction === 'left' && x >= 30) x -= 30;
+      if (direction === 'right' && x <= 390) x += 30;
+
+      player.style.top = y + 'px';
+      player.style.left = x + 'px';
+
+      checkWin();
+    }
+
+    function checkWin() {
+      const goalX = parseInt(goal.style.left);
+      const goalY = parseInt(goal.style.top);
+      if (x === goalX && y === goalY) {
+        setTimeout(() => {
+          alert("🎉 Congratulations! You won!");
+        }, 100);
+      }
+    }
+  </script>
+
+  <style>
+    .btn {
+      @apply w-12 h-12 bg-slate-700 hover:bg-slate-600 text-white text-xl rounded;
+    }
+  </style>
+</body>
+</html>

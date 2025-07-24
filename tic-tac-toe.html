@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe with Score</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-800">
+
+  <div class="text-center">
+    <h1 class="mb-4 text-3xl font-bold text-slate-100">Tic Tac Toe</h1>
+
+    <!-- Scoreboard -->
+    <div class="flex justify-center gap-10 mb-6 text-lg font-semibold text-slate-100">
+      <div>Player 1 (X): <span id="scoreX">0</span></div>
+      <div>Player 2 (O): <span id="scoreO">0</span></div>
+    </div>
+
+    <!-- Board -->
+    <div id="board" class="grid grid-cols-3 gap-2 mx-auto w-60">
+      <!-- 9 kotak -->
+      <div class="flex items-center justify-center w-20 h-20 text-3xl font-bold bg-white border rounded-md cursor-pointer cell" data-index="0"></div>
+      <div class="flex items-center justify-center w-20 h-20 text-3xl font-bold bg-white border rounded-md cursor-pointer cell" data-index="1"></div>
+      <div class="flex items-center justify-center w-20 h-20 text-3xl font-bold bg-white border rounded-md cursor-pointer cell" data-index="2"></div>
+      <div class="flex items-center justify-center w-20 h-20 text-3xl font-bold bg-white border rounded-md cursor-pointer cell" data-index="3"></div>
+      <div class="flex items-center justify-center w-20 h-20 text-3xl font-bold bg-white border rounded-md cursor-pointer cell" data-index="4"></div>
+      <div class="flex items-center justify-center w-20 h-20 text-3xl font-bold bg-white border rounded-md cursor-pointer cell" data-index="5"></div>
+      <div class="flex items-center justify-center w-20 h-20 text-3xl font-bold bg-white border rounded-md cursor-pointer cell" data-index="6"></div>
+      <div class="flex items-center justify-center w-20 h-20 text-3xl font-bold bg-white border rounded-md cursor-pointer cell" data-index="7"></div>
+      <div class="flex items-center justify-center w-20 h-20 text-3xl font-bold bg-white border rounded-md cursor-pointer cell" data-index="8"></div>
+    </div>
+
+    <!-- Popup Player 2 -->
+    <div id="popupO" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-50">
+      <div class="p-6 text-center bg-white shadow-md rounded-xl">
+        <h2 class="mb-4 text-lg font-semibold text-green-600">🎉 Congratulations Player 2!</h2>
+        <button onclick="resetBoard()" class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600">Play Again</button>
+      </div>
+    </div>
+
+    <!-- Popup Player 1 menang total -->
+    <div id="popupXwin" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-50">
+      <div class="p-6 text-center bg-white shadow-md rounded-xl">
+        <h2 class="mb-4 text-lg font-semibold text-purple-600">🎉 Player 1 Wins the Game!</h2>
+        <button onclick="resetAll()" class="px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600">Reset Game</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const board = document.querySelectorAll(".cell");
+    const popupO = document.getElementById("popupO");
+    const popupXwin = document.getElementById("popupXwin");
+    const scoreXEl = document.getElementById("scoreX");
+    const scoreOEl = document.getElementById("scoreO");
+
+    let currentPlayer = "X";
+    let gameBoard = Array(9).fill("");
+    let scoreX = 0;
+    let scoreO = 0;
+
+    const winPatterns = [
+      [0,1,2], [3,4,5], [6,7,8], // rows
+      [0,3,6], [1,4,7], [2,5,8], // cols
+      [0,4,8], [2,4,6]           // diagonals
+    ];
+
+    board.forEach(cell => {
+      cell.addEventListener("click", () => {
+        const index = cell.getAttribute("data-index");
+
+        if (gameBoard[index] === "") {
+          gameBoard[index] = currentPlayer;
+          cell.textContent = currentPlayer;
+
+          if (checkWinner(currentPlayer)) {
+            if (currentPlayer === "X") {
+              scoreX++;
+              scoreXEl.textContent = scoreX;
+              if (scoreX >= 3) {
+                popupXwin.classList.remove("hidden");
+              } else {
+                setTimeout(resetBoard, 500);
+              }
+            } else {
+              scoreO++;
+              scoreOEl.textContent = scoreO;
+              popupO.classList.remove("hidden");
+            }
+            return;
+          }
+
+          if (!gameBoard.includes("")) {
+            alert("Draw!");
+            setTimeout(resetBoard, 500);
+            return;
+          }
+
+          currentPlayer = currentPlayer === "X" ? "O" : "X";
+        }
+      });
+    });
+
+    function checkWinner(player) {
+      return winPatterns.some(pattern => {
+        return pattern.every(index => gameBoard[index] === player);
+      });
+    }
+
+    function resetBoard() {
+      gameBoard = Array(9).fill("");
+      board.forEach(cell => cell.textContent = "");
+      currentPlayer = "X";
+      popupO.classList.add("hidden");
+    }
+
+    function resetAll() {
+      scoreX = 0;
+      scoreO = 0;
+      scoreXEl.textContent = "0";
+      scoreOEl.textContent = "0";
+      resetBoard();
+      popupXwin.classList.add("hidden");
+    }
+  </script>
+
+</body>
+</html>
