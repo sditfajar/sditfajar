@@ -1,0 +1,29 @@
+import React from 'react';
+import Squares from '../ReactBits/Squares/Squares.jsx';
+
+export default function Hero() {
+  return (
+    <section className="relative flex items-center justify-center w-full min-h-screen overflow-hidden text-center text-black">
+      {/* 🔹 Background Squares */}
+      <div className="absolute inset-0 z-10">
+        <Squares
+          speed={0.5}
+          squareSize={40}
+          direction="diagonal" // up, down, left, right, diagonal
+          borderColor="#000"
+          hoverFillColor="#ffffff"
+        />
+      </div>
+
+      {/* 🔹 Konten Hero */}
+      <div className="relative z-10 px-6 md:px-12">
+        <h1 className="mb-4 text-3xl font-bold md:text-5xl">Selamat Datang di SDIT FAJAR Depok</h1>
+        <p className="max-w-2xl mx-auto text-sm md:text-lg">Membangun generasi cerdas dan berakhlak melalui pendidikan berbasis iman dan ilmu.</p>
+
+        <a href="#pendaftaran" className="inline-block px-6 py-3 mt-8 font-semibold text-gray-900 transition-all duration-300 bg-white shadow-md rounded-xl hover:bg-gray-100">
+          Daftar Sekarang
+        </a>
+      </div>
+    </section>
+  );
+}

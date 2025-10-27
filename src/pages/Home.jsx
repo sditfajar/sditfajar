@@ -4,8 +4,9 @@ import NewsSection from './NewsSection';
 import BuktiNyata from './BuktiNyata';
 // import LastCard from './LastCard';
 import Motto from './Motto';
-import ManajemenSekolah from './ManajemenSekolah';
+import ManajemenSekolahHome from './ManajemenSekolahHome';
 import StatistikManajemen from './StatistikManajemen.jsx';
+import KeunggulanSDIT from './KeunggulanSDIT.jsx';
 // import ProgramKami from './ProgramKami';
 // import KenapaHarusKami from './KenapaHarusKami';
 import Testimonials from './Testimonials';
@@ -38,7 +39,7 @@ export default function Home() {
       </div>
       {/* ManajemenSekolah */}
       <div className="pt-20 md:pt-23">
-        <ManajemenSekolah />
+        <ManajemenSekolahHome />
       </div>
       {/* KenapaHarusKami */}
       {/* <div className="pt-20 md:pt-23">
@@ -47,6 +48,10 @@ export default function Home() {
       {/* StatistikManajemen */}
       <div className="pt-20 md:pt-23">
         <StatistikManajemen />
+      </div>
+      {/* KeunggulanSDIT */}
+      <div className="pt-20 md:pt-23">
+        <KeunggulanSDIT />
       </div>
       {/* ProgramKami */}
       {/* <div className="pt-20 md:pt-23" id="program-kami">

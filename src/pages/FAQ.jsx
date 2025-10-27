@@ -25,7 +25,7 @@ const FAQ = () => {
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhP5cWZIe4bUbNKZnEqzr8rEsf0Am5nudqIcj5DXw8Trofwg/viewform"
            target="_blank"
            rel="noopener noreferrer"
-           class="text-blue-100 underline hover:text-yellow-200 font-semibold">
+           class="text-blue-700 underline hover:text-blue-900 font-semibold">
            Klik di sini untuk mendaftar
         </a>.
       `,
@@ -73,6 +73,7 @@ const FAQ = () => {
             </div>
           ))}
         </div>
+        {/* isi */}
       </div>
     </section>
   );

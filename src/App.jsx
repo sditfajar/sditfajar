@@ -9,6 +9,7 @@ import NewsSection from './pages/NewsSection';
 import BuktiNyata from './pages/BuktiNyata';
 import LastCard from './pages/LastCard';
 import StatistikManajemen from './pages/StatistikManajemen';
+import KeunggulanSDIT from './pages/KeunggulanSDIT';
 import ProgramKami from './pages/ProgramKami';
 import KenapaHarusKami from './pages/KenapaHarusKami';
 import ProfilSekolah from './pages/ProfilSekolah';
@@ -46,6 +47,7 @@ function App() {
           <Route path="/berita-sekolah" element={<FullBeritaSekolah />} />
           <Route path="/lastCard" element={<LastCard />} />
           <Route path="/statistik-manajemen" element={<StatistikManajemen />} />
+          <Route path="/keunggulan-sdit" element={<KeunggulanSDIT />} />
           <Route path="/program-kami" element={<ProgramKami />} />
           <Route path="/kenapa-harus-kami" element={<KenapaHarusKami />} />
           <Route path="/profil-sekolah" element={<ProfilSekolah />} />
