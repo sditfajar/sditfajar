@@ -29,7 +29,7 @@ const newsData = [
       style="color:#007BFF; text-decoration:underline; font-weight:600;">
       Pendaftaran SDIT FAJAR
     </a>.`,
-    bg: 'bg-[#FFD166]',
+    bg: 'bg-[#F59E0B]',
   },
 ];
 

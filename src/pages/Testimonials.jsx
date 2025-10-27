@@ -63,6 +63,7 @@ export default function Testimonials() {
       <div className="relative max-w-2xl mx-auto transition-all duration-700 ease-in-out lg:max-w-4xl">
         <img alt="" src="/images/logo/logo.png" className="h-12 mx-auto" />
 
+        {/* Isi testimoni */}
         <figure key={currentIndex} className="mt-10 text-center transition-all duration-700 ease-in-out">
           <blockquote className="font-semibold text-gray-900 text-xl/8 sm:text-2xl/9">
             <p className="italic opacity-90">“{currentTestimonial.quote}”</p>
@@ -79,29 +80,24 @@ export default function Testimonials() {
           </figcaption>
         </figure>
 
-        {/* Tombol kiri */}
-        <button
-          onClick={handlePrev}
-          aria-label="Sebelumnya"
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-[#2486C6] text-yellow-500 hover:text-white transition-all rounded-full shadow-md w-10 h-10 flex items-center justify-center"
-        >
-          <span className="text-2xl font-bold">{'‹'}</span>
-        </button>
+        {/* Navigasi di bawah */}
+        <div className="flex items-center justify-center mt-8 space-x-4">
+          {/* Tombol kiri */}
+          <button onClick={handlePrev} aria-label="Sebelumnya" className="bg-white/80 hover:bg-[#2486C6] text-[#2486C6] hover:text-white transition-all rounded-full shadow-md w-10 h-10 flex items-center justify-center">
+            <span className="text-2xl font-bold">{'‹'}</span>
+          </button>
 
-        {/* Tombol kanan */}
-        <button
-          onClick={handleNext}
-          aria-label="Berikutnya"
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-[#2486C6] text-yellow-500 hover:text-white transition-all rounded-full shadow-md w-10 h-10 flex items-center justify-center"
-        >
-          <span className="text-2xl font-bold">{'›'}</span>
-        </button>
+          {/* Indikator bulatan */}
+          <div className="flex justify-center space-x-2">
+            {testimonials.map((_, i) => (
+              <span key={i} className={`w-3 h-3 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-[#2486C6]' : 'bg-gray-300'}`} />
+            ))}
+          </div>
 
-        {/* Indikator bulatan */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {testimonials.map((_, i) => (
-            <span key={i} className={`w-3 h-3 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-[#2486C6]' : 'bg-gray-300'}`} />
-          ))}
+          {/* Tombol kanan */}
+          <button onClick={handleNext} aria-label="Berikutnya" className="bg-white/80 hover:bg-[#2486C6] text-[#2486C6] hover:text-white transition-all rounded-full shadow-md w-10 h-10 flex items-center justify-center">
+            <span className="text-2xl font-bold">{'›'}</span>
+          </button>
         </div>
       </div>
     </section>
