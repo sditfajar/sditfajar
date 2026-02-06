@@ -2,43 +2,33 @@ import React from 'react';
 
 const Kontak = () => {
   return (
-    <section className="px-4 py-20 mx-auto font-poppins bg-slate-100 lg:py-30 max-w-7xl md:px-6 lg:px-12">
-      {/* Text Content */}
-      <div className="mx-auto mb-5 text-left">
-        <h2 className="mt-1 text-2xl font-bold md:text-3xl md:font-extrabold text-[#002141]">Kontak Kami</h2>
-        <div className="h-2 w-40 bg-[#2486C6] mt-1 mb-4"></div>
+    <section className="flex items-center min-h-screen">
+      <div className="px-4 mx-auto max-w-7xl md:px-6 lg:px-12">
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-bold text-[#5DB5F7] mb-6">Kontak Kami</h2>
 
-        <p className="leading-relaxed text-justify text-gray-700 text-md md:text-lg">
-          Kami dengan senang hati menyambut setiap pertanyaan, saran, maupun kerja sama dari Anda. Silakan hubungi SDIT Fajar Kota Depok melalui kontak yang tersedia atau kunjungi langsung sekolah kami untuk mendapatkan informasi lebih
-          lanjut mengenai pendaftaran, kegiatan belajar, dan program pendidikan.
-        </p>
-      </div>
+        {/* Description */}
+        <div className="max-w-3xl space-y-5 text-base leading-relaxed text-gray-950 md:text-lg">
+          <p>Halaman kontak ini digunakan untuk diskusi terkait kerja sama pendidikan, informasi pendaftaran peserta didik baru, serta pertanyaan lain seputar program dan kegiatan SDIT Fajar.</p>
 
-      <div className="p-6 mt-12 bg-white shadow-md rounded-2xl">
-        <h3 className="mb-4 text-xl font-bold text-gray-900">Formulir Kontak</h3>
-        <form className="space-y-4">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <div>
-              <label className="block mb-2 text-gray-700">Nama Lengkap</label>
-              <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2486C6]" placeholder="Nama Anda" />
-            </div>
-            <div>
-              <label className="block mb-2 text-gray-700">Email</label>
-              <input type="email" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2486C6]" placeholder="Email Anda" />
-            </div>
-          </div>
-          <div>
-            <label className="block mb-2 text-gray-700">Subjek</label>
-            <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2486C6]" placeholder="Subjek Pesan" />
-          </div>
-          <div>
-            <label className="block mb-2 text-gray-700">Pesan</label>
-            <textarea rows="4" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2486C6]" placeholder="Tulis pesan Anda di sini"></textarea>
-          </div>
-          <button type="submit" className="bg-[#2486C6] text-white px-6 py-3 rounded-lg hover:bg-[#002141] transition duration-300">
-            Kirim Pesan
-          </button>
-        </form>
+          <p>
+            Layanan administrasi SDIT Fajar beroperasi pada hari
+            <strong> Senin hingga Jumat</strong>, pukul
+            <strong> 08.00 – 16.00 WIB</strong>.
+          </p>
+        </div>
+
+        {/* Button */}
+        <div className="mt-10">
+          <a
+            href="https://wa.me/6282249627864?text=Assalamualaikum%20SDIT%20Fajar,%20saya%20ingin%20menghubungi%20Anda."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 text-white font-semibold rounded-lg bg-[#5DB5F7] hover:bg-[#3ea0eb] transition duration-300"
+          >
+            Kontak Melalui WhatsApp
+          </a>
+        </div>
       </div>
     </section>
   );

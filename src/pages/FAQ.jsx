@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(0);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -66,9 +66,9 @@ const FAQ = () => {
                 </span>
               </button>
 
-              <div className={`px-6 pb-4 transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+              <div className={`px-6 pb-4 transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100 border-t border-white/60' : 'max-h-0 opacity-0 overflow-hidden'}`} style={{ borderTopWidth: '0.5px' }}>
                 {/* render HTML answer */}
-                <div className="text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }}></div>
+                <div className="pt-4 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }}></div>
               </div>
             </div>
           ))}

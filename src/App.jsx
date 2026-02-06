@@ -6,7 +6,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 
 import Home from './pages/Home';
 import NewsSection from './pages/NewsSection';
-import BuktiNyata from './pages/BuktiNyata';
+import BuktiNyata from './pages/BeritaSdit';
 import LastCard from './pages/LastCard';
 import StatistikManajemen from './pages/StatistikManajemen';
 import KeunggulanSDIT from './pages/KeunggulanSDIT';
@@ -57,8 +57,6 @@ function App() {
           <Route path="/ekstrakulikuler" element={<Ekstrakulikuler />} />
           <Route path="/kontak" element={<Kontak />} />
           <Route path="/majalah-mulia" element={<MajalahMulia />} />
-          <Route path="/berita-bmh" element={<BeritaBmh />} />
-          <Route path="/berita-bmh-detail" element={<BeritaBmhDetail />} />
           <Route path="/riset-pengembangan" element={<RisetPengembangan />} />
           <Route path="/riset-detail" element={<RisetDetail />} />
           <Route path="/berita-terkini-detail" element={<NewsDetail />} />

@@ -1,7 +1,7 @@
 // src/pages/Home.jsx
 import HeroTailwind from './HeroTailwind';
 import NewsSection from './NewsSection';
-import BuktiNyata from './BuktiNyata';
+import BuktiNyata from './BeritaSdit.jsx';
 // import LastCard from './LastCard';
 import Motto from './Motto';
 import ManajemenSekolahHome from './ManajemenSekolahHome';

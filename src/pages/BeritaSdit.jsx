@@ -3,7 +3,7 @@ const beritaSekolah = [
   {
     id: 3,
     img: '/images/berita-terkini/olahraga.jpg',
-    title: 'Senam Pagi hari Jumat di SDIT Fajar',
+    title: 'Senam Pagi hari Jumat di SDIT Fajarr',
     desc: 'Setiap Jumat pagi, siswa dan guru SDIT Fajar melaksanakan senam bersama untuk menjaga kebugaran, menumbuhkan semangat, dan mempererat kebersamaan sebelum memulai kegiatan belajar.',
     color: 'border-yellow-500',
     judul: 'text-yellow-500',
