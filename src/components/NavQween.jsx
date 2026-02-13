@@ -119,13 +119,14 @@ export default function Nav() {
           <NavLink to="/ekstrakulikuler" className={({ isActive }) => `font-semibold transition-all duration-200 text-sm/6 ${isActive ? 'text-[#65BDFF]' : 'text-[#002141] hover:text-[#65BDFF]'}`}>
             Ekstrakulikuler
           </NavLink>
+
           <NavLink to="/kontak" className={({ isActive }) => `font-semibold transition-all duration-200 text-sm/6 ${isActive ? 'text-[#65BDFF]' : 'text-[#002141] hover:text-[#65BDFF]'}`}>
             Kontak
           </NavLink>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdhP5cWZIe4bUbNKZnEqzr8rEsf0Am5nudqIcj5DXw8Trofwg/viewform?usp=send_form"
+            href="/form-pendaftaran"
             className="px-4 py-1 font-semibold text-white transition-all duration-200 border rounded-full shadow-lg bg-[#65BDFF] hover:bg-[#4bb1ff] border-white/50 focus:outline-2 focus:outline-offset-2 focus:outline-[#4bb1ff]"
           >
             Daftar
@@ -171,15 +172,13 @@ export default function Nav() {
                 <a href="/ekstrakulikuler" className="block px-3 py-2 -mx-3 font-semibold text-[#002141] hover:text-[#65BDFF] transition-all duration-200 rounded-xl text-base/7 hover:bg-gray-50">
                   Ekstrakulikuler
                 </a>
+
                 <a href="/kontak" className="block px-3 py-2 -mx-3 font-semibold text-[#002141] hover:text-[#65BDFF] transition-all duration-200 rounded-xl text-base/7 hover:bg-gray-50">
                   Kontak
                 </a>
               </div>
               <div className="py-6">
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdhP5cWZIe4bUbNKZnEqzr8rEsf0Am5nudqIcj5DXw8Trofwg/viewform?usp=send_form"
-                  className="-mx-3 block rounded-xl px-3 py-2.5 text-base/7 font-semibold text-[#002141] hover:text-[#65BDFF] transition-all duration-200 hover:bg-gray-50"
-                >
+                <a href="/form-pendaftaran" className="-mx-3 block rounded-xl px-3 py-2.5 text-base/7 font-semibold text-[#002141] hover:text-[#65BDFF] transition-all duration-200 hover:bg-gray-50">
                   Daftar
                 </a>
               </div>

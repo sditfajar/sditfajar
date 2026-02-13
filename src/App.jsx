@@ -17,6 +17,7 @@ import ManajemenSekolah from './pages/ManajemenSekolah';
 import SejarahSekolah from './pages/SejarahSekolah';
 import Kurikulum from './pages/Kurikulum';
 import Ekstrakulikuler from './pages/Ekstrakulikuler';
+import FormPendaftaran from './pages/FormPendaftaran';
 import Kontak from './pages/Kontak';
 import MajalahMulia from './pages/MajalahMulia';
 import BeritaBmh from './pages/BeritaBmh';
@@ -55,6 +56,7 @@ function App() {
           <Route path="/sejarah-sekolah" element={<SejarahSekolah />} />
           <Route path="/kurikulum" element={<Kurikulum />} />
           <Route path="/ekstrakulikuler" element={<Ekstrakulikuler />} />
+          <Route path="/form-pendaftaran" element={<FormPendaftaran />} />
           <Route path="/kontak" element={<Kontak />} />
           <Route path="/majalah-mulia" element={<MajalahMulia />} />
           <Route path="/riset-pengembangan" element={<RisetPengembangan />} />
