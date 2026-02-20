@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function NewsSection({}) {
+export default function NewsSection({ limit }) {
   const [newsData, setNewsData] = useState([]);
   const [selectedNews, setSelectedNews] = useState(null);
   const [loading, setLoading] = useState(true);
