@@ -41,7 +41,7 @@ export default function HeroTailwind() {
             {/* Tombol */}
             <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdhP5cWZIe4bUbNKZnEqzr8rEsf0Am5nudqIcj5DXw8Trofwg/viewform?usp=send_form"
+                href="/form-pendaftaran"
                 target="_blank"
                 className="rounded-xl bg-[#65BDFF] px-5 py-3 text-sm sm:text-base font-semibold focus:outline-2 focus:outline-offset-2 focus:outline-[#40acff] text-white shadow-md hover:bg-[#40acff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#65BDFF]"
               >
